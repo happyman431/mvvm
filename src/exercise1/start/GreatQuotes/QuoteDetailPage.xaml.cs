@@ -2,13 +2,16 @@
 using GreatQuotes.ViewModels;
 
 namespace GreatQuotes
-{    
+{
     public partial class QuoteDetailPage : ContentPage
     {
-        public QuoteDetailPage(QuoteViewModel quote)
+        public QuoteDetailPage()
         {
-            BindingContext = quote;
-            InitializeComponent ();
+            BindingContext = App.MainViewModel.SelectedQuote;
+
+            App.MainViewModel.SelectedQuote = null;
+
+            InitializeComponent();
         }
     }
 }
